@@ -1,0 +1,18 @@
+<header>
+	<h1>Chat App</h1>
+
+	<login-buttons></login-buttons>
+	
+	<form class="new-message" ng-submit="$ctrl.addMessage($ctrl.newMessage)" ng-show="$ctrl.currentUser">
+		<input ng-model="$ctrl.newMessage" type="text" name="text" placeholder="Type your message"/>
+	</form>
+</header>
+
+<ul>
+	<li ng-repeat="message in $ctrl.messages">
+		<div class="text" style="margin-left:30px">
+			<strong>{{message.sender}}</strong> - {{message.text}}<br>
+			<i style="font-size:10px">{{task.sendAt}}</i><br>
+		</div>
+	</li>
+</ul>
